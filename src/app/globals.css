@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,7 +44,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  /* --radius: 0.625rem; */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -118,5 +118,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .btn {
+    @apply bg-white text-black hover:bg-black hover:text-white;
+  }
+  .btn2 {
+    @apply border-white border bg-transparent text-white hover:bg-white hover:text-black;
   }
 }
