@@ -1,17 +1,22 @@
 import CartButton from '@/components/cart/CartButton'
 import { UserRound } from 'lucide-react'
+import Link from 'next/link'
 
 const HeaderLinks = () => {
   return (
-    <ul className='flex items-center gap-8 font-bold text-white'>
-      <li>ABOUT</li>
-      <li>CONTACT US</li>
-      <li>
+    <ul className='flex items-center font-semibold lg:font-bold text-white gap-5 xl:gap-8'>
+      <Link href='/' className=''>
+        ABOUT
+      </Link>
+      <Link href='/' className=''>
+        CONTACT US
+      </Link>
+      <Link href='/' className=''>
         <CartButton />
-      </li>
-      <li>
+      </Link>
+      <Link href='/' className=''>
         <UserRound />
-      </li>
+      </Link>
     </ul>
   )
 }

@@ -4,8 +4,8 @@ const HeaderContainer = () => {
   return (
     // settiong Image as background
     <div
-      className='relative h-screen w-full bg-cover bg-center bg-fixed'
-      style={{ backgroundImage: 'url(images/hero.jpg)' }}
+      className='relative min-h-[70vh] md:min-h-[80vh] lg:min-h-screen bg-cover bg-center bg-fixed'
+      style={{ backgroundImage: 'url(/images/hero.jpg)' }}
     >
       {/* setting image overlay */}
       <div

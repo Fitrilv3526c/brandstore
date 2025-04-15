@@ -4,7 +4,7 @@ import Deals from '@/components/layout/Deals/Deals'
 export default function Home() {
   return (
     <div className=' '>
-      <div className=' mx-auto w-[80%]'>
+      <div className=' mx-auto w-[90%]'>
         <Carosal />
         <Deals />
       </div>
