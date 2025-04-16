@@ -3,7 +3,7 @@ import React from 'react'
 
 const Deals = () => {
   return (
-    <div className='block  md:flex justify-center md:gap-7'>
+    <div className='block  md:flex justify-center md:gap-7 mb-30'>
       <div
         style={{
           backgroundImage: 'url(/images/card1.jpg)',

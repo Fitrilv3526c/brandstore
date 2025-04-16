@@ -1,39 +1,172 @@
-import { UserRound } from 'lucide-react'
+// there will be discount for a product if discount is true
+
 const data = {
-  mobileNavItems: [
+  Products: [
     {
       id: 1,
-      name: 'EVERYTHING',
-      href: '/everything',
+      title: 'DNK Yellow Shoes',
+      price: 150,
+      discountPercentage: 20,
+      discount: true,
+      img: '/images/men3.jpg',
+      category: 'Men',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.5,
+        count: 87,
+      },
+      stock: 7,
+      // variants: [
+      //   { color: 'blue', img: '/images/men2.jpg' },
+      //   { color: 'yellow', img: '/images/shirt-yellow.jpg' },
+      //   { color: 'green', img: '/images/men3.jpg' },
+      // ],
     },
     {
       id: 2,
-      name: 'WOMEN',
-      href: '/women',
+      title: 'DNK Blue Shoes',
+      price: 240,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/men2.jpg',
+      category: 'Men',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.5,
+        count: 80,
+      },
+      stock: 4,
     },
     {
       id: 3,
-      name: 'MEN',
-      href: '/men',
+      title: 'Dark Brown Jeans',
+      price: 150,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/men1.jpg',
+      category: 'Men',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.0,
+        count: 40,
+      },
+      stock: 10,
     },
     {
       id: 4,
-      name: 'ACCESSORIES',
-      href: '/accessories',
+      title: 'Blue Denim Jeans',
+      price: 150,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/women2.jpg',
+      category: 'Women',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.5,
+        count: 70,
+      },
+      stock: 8,
     },
     {
       id: 5,
-      name: 'ABOUT',
-      href: '/about',
-      icon: UserRound,
+      title: 'Basic Grey Jeans',
+      price: 130,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/women3.jpg',
+      category: 'Women',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.0,
+        count: 90,
+      },
+      stock: 0,
     },
     {
       id: 6,
-      name: 'CONTACT US',
-      href: '/contact',
-      icon: UserRound,
+      title: 'Blue Denim Shorts',
+      price: 190,
+      discountPercentage: 30,
+      discount: true,
+      img: '/images/women1.jpg',
+      category: 'Women',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.0,
+        count: 90,
+      },
+      stock: 0,
+    },
+    {
+      id: 7,
+      title: 'Anchor Braclet',
+      price: 170,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/accessory2.jpg',
+      category: 'Accessories',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.0,
+        count: 70,
+      },
+      stock: 15,
+    },
+    {
+      id: 8,
+      title: 'Boho Bangle Braclet',
+      price: 165,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/accessory1.jpg',
+      category: 'Accessories',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 0,
+        count: 0,
+      },
+      stock: 6,
+    },
+    {
+      id: 9,
+      title: 'Light Brown Purse',
+      price: 250,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/accessory3.jpg',
+      category: 'Accessories',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.0,
+        count: 10,
+      },
+      stock: 13,
+    },
+    {
+      id: 10,
+      title: 'Light Brown Purse',
+      price: 240,
+      discountPercentage: 0,
+      discount: false,
+      img: '/images/accessory4.jpg',
+      category: 'Accessories',
+      description:
+        'Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.',
+      rating: {
+        value: 4.0,
+        count: 70,
+      },
+      stock: 7,
     },
   ],
 }
-
 export default data

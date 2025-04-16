@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 const HeroSection = () => {
   return (
     <div className='z-30 text-white '>
-      <h1 className='text-4xl md:text-5xl  lg:text-6xl tracking-wider  font-bold text-center'>
+      <h1 className='text-4xl text-testRed md:text-5xl  lg:text-6xl tracking-wider  font-bold sm:text-center md:text-left'>
         Raining Offers For
         <span className='md:block mt-6'> Hot Summer!</span>
       </h1>
