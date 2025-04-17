@@ -4,51 +4,29 @@ import React from 'react'
 
 const MobileHeaderLinks = () => {
   return (
-    <ul className='flex flex-col'>
-      <Link
-        href='/'
-        className='cursor-pointer flex items-end  p-5 hover:bg-blue-100'
-      >
-        <IoPerson className='text-8xl' />
-      </Link>
-
-      <Link
-        href='/'
-        className='cursor-pointer border-b p-5 hover:bg-blue-100 font-semibold'
-      >
-        EVERYTHING
-      </Link>
-      <Link
-        href='/'
-        className='cursor-pointer border-b p-5 hover:bg-blue-100 font-semibold'
-      >
-        WOMEN
-      </Link>
-      <Link
-        href='/'
-        className='cursor-pointer border-b p-5 hover:bg-blue-100 font-semibold'
-      >
-        MEN
-      </Link>
-      <Link
-        href='/'
-        className='cursor-pointer border-b p-5 hover:bg-blue-100 font-semibold'
-      >
-        ACCESSORIES
-      </Link>
-      <Link
-        href='/'
-        className='cursor-pointer border-b p-5 hover:bg-blue-100 font-semibold'
-      >
-        ABOUT
-      </Link>
-      <Link
-        href='/'
-        className='cursor-pointer border-b p-5 hover:bg-blue-100 font-semibold'
-      >
-        CONTACT US
-      </Link>
-    </ul>
+    <div className='py-4'>
+      <ul className='space-y-2'>
+        {[
+          { icon: <IoPerson className='w-6 h-6' />, text: 'Account' },
+          { text: 'EVERYTHING' },
+          { text: 'WOMEN' },
+          { text: 'MEN' },
+          { text: 'ACCESSORIES' },
+          { text: 'ABOUT' },
+          { text: 'CONTACT US' },
+        ].map((item, index) => (
+          <li key={index}>
+            <Link
+              href='/'
+              className='flex items-center gap-3 p-4 hover:bg-gray-100 rounded-md transition-colors'
+            >
+              {item.icon && <span className='mr-2'>{item.icon}</span>}
+              <span className='font-medium'>{item.text}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 

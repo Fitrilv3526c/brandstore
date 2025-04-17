@@ -4,18 +4,16 @@ import Link from 'next/link'
 
 const HeaderLinks = () => {
   return (
-    <ul className='flex items-center font-semibold lg:font-bold text-white gap-5 xl:gap-8'>
-      <Link href='/' className=''>
+    <ul className='flex items-center font-medium text-white gap-4 xl:gap-6'>
+      <Link href='/' className='hover:text-blue-300 transition-colors'>
         ABOUT
       </Link>
-      <Link href='/' className=''>
+      <Link href='/' className='hover:text-blue-300 transition-colors'>
         CONTACT US
       </Link>
-      <Link href='/' className=''>
-        <CartButton />
-      </Link>
-      <Link href='/' className=''>
-        <UserRound />
+      <CartButton />
+      <Link href='/' className='hover:text-blue-300 transition-colors'>
+        <UserRound className='w-5 h-5' />
       </Link>
     </ul>
   )

@@ -29,22 +29,25 @@ const ProductCard = ({ products }: Props) => {
   }
 
   return (
-    <div className='grid grid-cols-5 gap-6'>
+    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6'>
       {products.map((product) => {
         const finalPrice = product.discount
           ? getDiscountedPrice(product.price, product.discountPercentage)
           : product.price
 
         return (
-          <Link href='/' key={product.id} className=' w-[250px] h-[375px]'>
-            <div className='relative group  transition-all'>
+          <Link href='/' key={product.id} className='w-full min-w-0'>
+            <div className='relative group transition-all aspect-square'>
               <Image
                 src={product.img}
                 alt={product.title}
-                width={250}
-                height={250}
-                className='object-contain'
+                width={300} // Increased for better quality
+                height={300}
+                className='object-contain w-full h-full'
+                sizes='(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw'
               />
+
+              {/* </div> */}
               <div className='absolute top-[23px] w-full flex justify-between px-4'>
                 <div>
                   {product.discount && (
