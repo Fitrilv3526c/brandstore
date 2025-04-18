@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 const ProductPageContainer = () => {
   const [page, setPage] = useState<number>(1)
-  const productsPerPage = 6
+  const productsPerPage: number = Number(process.env.PRODUCTS_PER_PAGE) || 6
   const totalPages = Math.ceil(data.Products.length / productsPerPage)
 
   const currentProducts = data.Products.slice(
