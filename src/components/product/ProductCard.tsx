@@ -21,15 +21,16 @@ interface Product {
 
 interface Props {
   products: Product[]
+  classes: string
 }
 
-const ProductCard = ({ products }: Props) => {
+const ProductCard = ({ products, classes }: Props) => {
   const getDiscountedPrice = (price: number, percentage: number) => {
     return price - (price * percentage) / 100
   }
 
   return (
-    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6'>
+    <div className={classes}>
       {products.map((product) => {
         const finalPrice = product.discount
           ? getDiscountedPrice(product.price, product.discountPercentage)
@@ -41,13 +42,12 @@ const ProductCard = ({ products }: Props) => {
               <Image
                 src={product.img}
                 alt={product.title}
-                width={300} // Increased for better quality
+                width={300}
                 height={300}
                 className='object-contain w-full h-full'
                 sizes='(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw'
               />
 
-              {/* </div> */}
               <div className='absolute top-[23px] w-full flex justify-between px-4'>
                 <div>
                   {product.discount && (
@@ -57,9 +57,6 @@ const ProductCard = ({ products }: Props) => {
                   )}
                 </div>
 
-                {/* <Button className=' bg-gray-100 text-black hover:bg-white rounded-full hidden group-hover:block'>
-                  <BsHandbagFill />
-                </Button> */}
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button className='bg-gray-100 text-black hover:bg-white rounded-full hidden group-hover:block cursor-pointer'>

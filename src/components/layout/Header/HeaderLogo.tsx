@@ -1,11 +1,17 @@
+"use client"
+
 import Image from 'next/image'
 import Link from 'next/link'
 
-const HeaderLogo = () => {
+interface props {
+  logo: string
+}
+
+const HeaderLogo = ({ logo }: props) => {
   return (
     <Link href='/' passHref className='focus:outline-none'>
       <Image
-        src='/images/logo.png'
+        src={logo}
         alt='Brandstore Logo'
         width={120}
         height={40}
