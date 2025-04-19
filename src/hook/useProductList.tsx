@@ -6,6 +6,9 @@ interface Options {
   sortOption: string
   page: number
   productsPerPage: number
+  minPrice: number
+  maxPrice: number
+  searchQuery?: string
 }
 
 export const useProductList = ({
@@ -13,12 +16,21 @@ export const useProductList = ({
   sortOption,
   page,
   productsPerPage,
+  minPrice,
+  maxPrice,
+  searchQuery,
 }: Options) => {
   // 1. Filter products by category
-  const filtered = useMemo(() => {
-    if (!category || category === 'all') return data.Products
-    return data.Products.filter((p) => p.category === category)
-  }, [category])
+  const filtered = data.Products.filter((product) => {
+    const matchesCategory =
+      !category || category === 'all' || product.category === category
+
+    const matchesPrice = product.price >= minPrice && product.price <= maxPrice
+    const matchesSearch = product.title
+      .toLowerCase()
+      .includes(searchQuery?.toLowerCase() || '')
+    return matchesCategory && matchesPrice && matchesSearch
+  })
 
   // 2. Sort the filtered products
   const sorted = useMemo(() => {
@@ -52,8 +64,11 @@ export const useProductList = ({
   }, [sorted, page, productsPerPage])
 
   // 4. Calculate start and end indices
-  const start = sorted.length === 0 ? 0 : (page - 1) * productsPerPage + 1
-  const end = start + currentProducts.length - 1
+  const start =
+    currentProducts.length === 0 ? 0 : (page - 1) * productsPerPage + 1
+
+  const end =
+    currentProducts.length === 0 ? 0 : start + currentProducts.length - 1
 
   return {
     currentProducts,

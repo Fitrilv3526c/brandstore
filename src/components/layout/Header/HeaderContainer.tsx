@@ -5,7 +5,6 @@ import HeroSection from './HeroSection'
 const HeaderContainer = () => {
   return (
     <div className='relative min-h-[70vh] md:min-h-[80vh] lg:min-h-screen w-full overflow-hidden'>
-      {/* Next.js Image for better performance */}
       <Image
         src='/images/hero.jpg'
         alt='Hero Background'

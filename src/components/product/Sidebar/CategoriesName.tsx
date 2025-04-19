@@ -1,19 +1,13 @@
+import data from '@/lib/data'
 import Link from 'next/link'
 
-const categories = [
-  {
-    title: 'Accessories',
-    href: '/products/Accessories',
-  },
-  {
-    title: 'Men',
-    href: '/products/Men',
-  },
-  {
-    title: 'Women',
-    href: '/products/Women',
-  },
-]
+const categories = Array.from(
+  new Set(data.Products.map((p) => p.category))
+).map((category) => ({
+  title: category,
+  href: `/products/${category}`,
+  count: data.Products.filter((p) => p.category === category).length,
+}))
 
 const CategoriesName = () => {
   return (
@@ -26,7 +20,7 @@ const CategoriesName = () => {
               <Link href={category.href} className='hover:text-blue-500'>
                 {category.title}
               </Link>
-              <span>(0)</span>
+              <span>({category.count})</span>
             </li>
           </ul>
         )

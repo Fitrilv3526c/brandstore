@@ -20,7 +20,7 @@ const Footer = () => {
     forHim: [
       { text: 'Men Jeans', href: '/' },
       { text: 'Men Shirts', href: '/' },
-      { text: 'Men Shoes', href: '/' }, // Fixed typo from "Sjoes"
+      { text: 'Men Shoes', href: '/' },
       { text: 'Men Accessories', href: '/' },
       { text: 'Men Jackets', href: '/' },
     ],
@@ -36,9 +36,7 @@ const Footer = () => {
 
   return (
     <footer className='bg-white border-t'>
-      {/* Main Footer Section */}
       <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-        {/* Brand Column */}
         <div className='flex flex-col items-center md:items-start gap-6'>
           <Image
             src='/images/logo-black.png'
@@ -52,7 +50,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* For Her Links */}
         <div className='flex flex-col items-center md:items-start'>
           <h3 className='text-xl font-bold mb-4 md:mb-6'>For Her</h3>
           <ul className='space-y-2 text-center md:text-left'>
@@ -69,7 +66,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* For Him Links */}
         <div className='flex flex-col items-center md:items-start'>
           <h3 className='text-xl font-bold mb-4 md:mb-6'>For Him</h3>
           <ul className='space-y-2 text-center md:text-left'>
@@ -86,14 +82,11 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Newsletter/Social (Placeholder for future expansion) */}
         <div className='hidden lg:flex flex-col'>
           <h3 className='text-xl font-bold mb-6'>Stay Connected</h3>
-          {/* Can add newsletter form here later */}
         </div>
       </div>
 
-      {/* Copyright & Social Section */}
       <div className='border-t py-6'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4'>
           <p className='text-gray-500 text-sm text-center sm:text-left'>

@@ -34,7 +34,6 @@ const Deals = () => {
             key={index}
             className='relative group overflow-hidden rounded-lg h-[350px] md:h-[450px] lg:h-[500px]'
           >
-            {/* Next.js Image for better performance */}
             <Image
               src={deal.image}
               alt={deal.title}

@@ -32,6 +32,7 @@ const ProductCard = ({ products, classes }: Props) => {
     return price - (price * percentage) / 100
   }
 
+  if (!products || products.length === 0) return null
   return (
     <div className={classes}>
       {products.map((product) => {

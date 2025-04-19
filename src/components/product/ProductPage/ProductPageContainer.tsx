@@ -7,17 +7,13 @@ import { useState } from 'react'
 import { useProductList } from '@/hook/useProductList'
 import { useParams } from 'next/navigation'
 
-// interface Product {
-//   id: number
-//   title: string
-//   img: string
-//   category: string
-//   discount: boolean
-//   discountPercentage: number
-//   price: number
-// }
+interface props {
+  minPrice: number
+  maxPrice: number
+  searchQuery: string
+}
 
-const ProductPageContainer = () => {
+const ProductPageContainer = ({ minPrice, maxPrice, searchQuery }: props) => {
   const params = useParams()
   const selectedCategory = params.category as string
   const [page, setPage] = useState<number>(1)
@@ -29,22 +25,35 @@ const ProductPageContainer = () => {
       sortOption,
       page,
       productsPerPage,
+      minPrice,
+      maxPrice,
+      searchQuery,
     })
 
   return (
     <>
       <div className=' bg-white  h-auto p-20'>
         <MyBreadcrumb categoryName='Products' />
-        <div className='flex justify-between mb-11 text-[18px]'>
-          <span>
-            Showing {start}-{end} of {totalProducts}
-          </span>
-          <Dropdown setSortOption={setSortOption} />
-        </div>
-        <ProductCard
-          products={currentProducts}
-          classes='grid grid-cols-3 xl:grid-cols-4 gap-4'
-        />
+        {currentProducts.length > 0 && (
+          <div className='flex justify-between mb-11 text-[18px]'>
+            <span>
+              Showing {start}-{end} of {totalProducts}
+            </span>
+
+            <Dropdown setSortOption={setSortOption} />
+          </div>
+        )}
+        {currentProducts.length > 0 ? (
+          <ProductCard
+            products={currentProducts}
+            classes='grid grid-cols-3 xl:grid-cols-4 gap-4'
+          />
+        ) : (
+          <div className='text-center text-gray-500 text-lg mt-10'>
+            No products match your filters.
+          </div>
+        )}
+
         {totalPages && totalPages > 1 && (
           <Pagination page={page} setPage={setPage} totalPages={totalPages} />
         )}

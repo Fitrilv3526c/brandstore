@@ -27,7 +27,6 @@ interface props {
 
 const CategoryMenu = ({ textColor }: props) => {
   const pathname = usePathname()
-  console.log(pathname)
   return (
     <ul className={`text-white flex items-center gap-4 xl:gap-6 font-medium`}>
       {categories.map((category) => (

@@ -2,18 +2,22 @@
 import { Button } from '@/components/ui/button'
 import { useRef, useState } from 'react'
 
-const MIN = 0
-const MAX = 500
+interface props {
+  min: number
+  max: number
+  setMinPrice: (n: number) => void
+  setMaxPrice: (n: number) => void
+}
 
-const Filter = () => {
-  const [minVal, setMinVal] = useState(50)
-  const [maxVal, setMaxVal] = useState(300)
+// const MIN = 0
+// const MAX = 500
+
+const Filter = ({ setMaxPrice, setMinPrice, min, max }: props) => {
+  const [minVal, setMinVal] = useState(min)
+  const [maxVal, setMaxVal] = useState(max)
   const range = useRef<HTMLDivElement>(null)
-
-  // Update slider background
-  const getPercent = (value: number) => {
-    return Math.round(((value - MIN) / (MAX - MIN)) * 100)
-  }
+  const getPercent = (value: number) =>
+    Math.round(((value - min) / (max - min)) * 100)
 
   const minPercent = getPercent(minVal)
   const maxPercent = getPercent(maxVal)
@@ -46,8 +50,8 @@ const Filter = () => {
         {/* Min Thumb */}
         <input
           type='range'
-          min={MIN}
-          max={MAX}
+          min={min}
+          max={max}
           value={minVal}
           onChange={(e) => {
             const val = Math.min(Number(e.target.value), maxVal - 10)
@@ -64,8 +68,8 @@ const Filter = () => {
         {/* Max Thumb */}
         <input
           type='range'
-          min={MIN}
-          max={MAX}
+          min={min}
+          max={max}
           value={maxVal}
           onChange={(e) => {
             const val = Math.max(Number(e.target.value), minVal + 10)
@@ -81,7 +85,13 @@ const Filter = () => {
       </div>
 
       <div className='flex justify-between items-center'>
-        <Button className='bg-blue-600 px-7 text-[16px] hover:bg-blue-700 cursor-pointer'>
+        <Button
+          className='bg-blue-600 px-7 text-[16px] hover:bg-blue-700 cursor-pointer'
+          onClick={() => {
+            setMinPrice(minVal)
+            setMaxPrice(maxVal)
+          }}
+        >
           Filter
         </Button>
         <p className='text-sm text-gray-500'>

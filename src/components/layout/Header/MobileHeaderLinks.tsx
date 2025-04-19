@@ -7,17 +7,21 @@ const MobileHeaderLinks = () => {
     <div className='py-4'>
       <ul className='space-y-2'>
         {[
-          { icon: <IoPerson className='w-6 h-6' />, text: 'Account' },
-          { text: 'EVERYTHING' },
-          { text: 'WOMEN' },
-          { text: 'MEN' },
-          { text: 'ACCESSORIES' },
-          { text: 'ABOUT' },
-          { text: 'CONTACT US' },
+          {
+            icon: <IoPerson className='w-6 h-6' />,
+            text: 'Account',
+            href: '/',
+          },
+          { text: 'EVERYTHING', href: '/products' },
+          { text: 'WOMEN', href: '/products/Women' },
+          { text: 'MEN', href: '/products/Men/' },
+          { text: 'ACCESSORIES', href: '/products/Accessories' },
+          { text: 'ABOUT', href: '/' },
+          { text: 'CONTACT US', href: '/' },
         ].map((item, index) => (
           <li key={index}>
             <Link
-              href='/'
+              href={item.href}
               className='flex items-center gap-3 p-4 hover:bg-gray-100 rounded-md transition-colors'
             >
               {item.icon && <span className='mr-2'>{item.icon}</span>}

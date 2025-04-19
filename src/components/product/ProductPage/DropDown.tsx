@@ -5,7 +5,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
-// import data from '@/lib/data'
 import { useState } from 'react'
 import { IoIosArrowDown } from 'react-icons/io'
 
