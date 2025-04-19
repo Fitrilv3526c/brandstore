@@ -1,12 +1,17 @@
 import Header from './Header'
 import Image from 'next/image'
-import HeroSection from './HeroSection'
+// import HeroSection from './HeroSection'
 
-const HeaderContainer = () => {
+interface props{
+  img:string
+  classes : string
+}
+
+const HeaderContainer = ({img, classes} : props) => {
   return (
-    <div className='relative min-h-[70vh] md:min-h-[80vh] lg:min-h-screen w-full overflow-hidden'>
+    <div className={classes}>
       <Image
-        src='/images/hero.jpg'
+        src={img}
         alt='Hero Background'
         fill
         className='object-cover bg-center bg-fixed'
@@ -26,9 +31,9 @@ const HeaderContainer = () => {
         headerPosition='absolute top-0 left-0 z-20 '
       />
       {/* Hero Section Positioning */}
-      <div className='absolute top-1/2 left-1/2 w-full px-4 sm:px-6 transform -translate-x-1/2 -translate-y-1/2 z-30 text-center md:text-left md:left-[40%] lg:left-1/3 xl:left-1/4 md:w-[80%] lg:w-[70%] xl:w-[60%]'>
+      {/* <div className='absolute top-1/2 left-1/2 w-full px-4 sm:px-6 transform -translate-x-1/2 -translate-y-1/2 z-30 text-center md:text-left md:left-[40%] lg:left-1/3 xl:left-1/4 md:w-[80%] lg:w-[70%] xl:w-[60%]'>
         <HeroSection />
-      </div>
+      </div> */}
     </div>
   )
 }

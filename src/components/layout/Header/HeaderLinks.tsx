@@ -1,6 +1,7 @@
 import CartButton from '@/components/cart/CartButton'
 import { UserRound } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 interface props {
   textColor: string
@@ -9,9 +10,10 @@ interface props {
 }
 
 const HeaderLinks = ({ textColor, cartNumBGColor, cartNumColor }: props) => {
+  const pathname = usePathname()
   return (
     <ul className={`flex items-center font-medium ${textColor} gap-4 xl:gap-6`}>
-      <Link href='/' className='hover:text-blue-300 transition-colors'>
+      <Link href='/about' className={`hover:text-blue-300 transition-colors ${pathname === '/about' && 'text-blue-500'}`}>
         ABOUT
       </Link>
       <Link href='/' className='hover:text-blue-300 transition-colors'>

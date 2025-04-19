@@ -76,9 +76,9 @@ const ProductCard = ({ products, classes }: Props) => {
             </div>
             <h3 className='mt-3 text-lg font-semibold'>{product.title}</h3>
             <p className='text-gray-500'>{product.category}</p>
-            <div className='mt-2 space-x-2 text-base'>
+            <div className='mt-2 space-x-2 text-base flex flex-col sm:flex-row'>
               {product.discount && (
-                <span className='line-through text-gray-400'>
+                <span className=' line-through text-gray-400 '>
                   ${product.price.toFixed(2)}
                 </span>
               )}
