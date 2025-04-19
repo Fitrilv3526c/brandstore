@@ -8,18 +8,22 @@ const Products = () => {
   const [minPrice, setMinPrice] = useState(0)
   const [maxPrice, setMaxPrice] = useState(500)
   return (
-    <div className='p-16 grid grid-cols-[26%_70%] gap-10 items-start'>
-      <Sidebar
-        setMaxPrice={setMaxPrice}
-        setMinPrice={setMinPrice}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
-      <ProductPageContainer
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        searchQuery={searchQuery}
-      />
+    <div className='p-7 md:p-16 grid  lg:grid-cols-[26%_70%] gap-10 items-start'>
+      <div className='order-2 lg:order-1'>
+        <Sidebar
+          setMaxPrice={setMaxPrice}
+          setMinPrice={setMinPrice}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
+      </div>
+      <div className='order-1 lg:order-1'>
+        <ProductPageContainer
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          searchQuery={searchQuery}
+        />
+      </div>
     </div>
   )
 }

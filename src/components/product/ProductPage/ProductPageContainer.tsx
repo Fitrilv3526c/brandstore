@@ -32,11 +32,11 @@ const ProductPageContainer = ({ minPrice, maxPrice, searchQuery }: props) => {
 
   return (
     <>
-      <div className=' bg-white  h-auto p-20'>
+      <div className=' bg-white  h-auto p-14 sm:p-20'>
         <MyBreadcrumb categoryName='Products' />
         {currentProducts.length > 0 && (
-          <div className='flex justify-between mb-11 text-[18px]'>
-            <span>
+          <div className='flex justify-between items-center flex-wrap mb-11 text-[18px]'>
+            <span className='mb-4 sm:mb-0'>
               Showing {start}-{end} of {totalProducts}
             </span>
 
@@ -46,7 +46,7 @@ const ProductPageContainer = ({ minPrice, maxPrice, searchQuery }: props) => {
         {currentProducts.length > 0 ? (
           <ProductCard
             products={currentProducts}
-            classes='grid grid-cols-3 xl:grid-cols-4 gap-4'
+            classes='grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4'
           />
         ) : (
           <div className='text-center text-gray-500 text-lg mt-10'>

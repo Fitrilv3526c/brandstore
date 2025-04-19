@@ -8,6 +8,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from '@/components/ui/tooltip'
+import ProductRating from './ProductRating'
 
 export interface Product {
   id: number
@@ -82,6 +83,9 @@ const ProductCard = ({ products, classes }: Props) => {
                 </span>
               )}
               <span className=' font-bold'>${finalPrice.toFixed(2)}</span>
+            </div>
+            <div className='mt-3'>
+              <ProductRating value={product.rating.value} readOnly />
             </div>
           </Link>
         )

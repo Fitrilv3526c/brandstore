@@ -23,7 +23,7 @@ const Filter = ({ setMaxPrice, setMinPrice, min, max }: props) => {
   const maxPercent = getPercent(maxVal)
 
   return (
-    <div className='w-full max-w-md py-6 space-y-4 mb-12'>
+    <div className='w-full lg:max-w-md py-6 space-y-4 mb-12'>
       <h2 className='text-lg font-semibold'>Filter by Price</h2>
 
       {/* Price Labels */}

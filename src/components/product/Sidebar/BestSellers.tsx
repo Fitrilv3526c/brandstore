@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { Product } from '../ProductCard'
 import Link from 'next/link'
+import ProductRating from '../ProductRating'
 
 interface props {
   products: Product[]
@@ -11,7 +12,7 @@ const BestSellers = ({ products }: props) => {
     <div>
       <h2 className='text-2xl font-semibold mb-10'>Best Sellers</h2>
       {products.map((product) => (
-        <Link href='/' key={product.id} className='flex mb-4 '>
+        <Link href='/' key={product.id} className='flex mb-4 border-b pb-4'>
           <div className='relative w-full aspect-[1/1] max-w-[90px]'>
             <Image
               src={product.img}
@@ -25,6 +26,7 @@ const BestSellers = ({ products }: props) => {
             <h3 className='text-lg font-semibold text-gray-700'>
               {product.title}
             </h3>
+            <ProductRating value={product.rating.value} readOnly />
             <p className='text-[16px] text-gray-700'>${product.price}</p>
           </div>
         </Link>
