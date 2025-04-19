@@ -3,7 +3,7 @@ import ProductCard from '@/components/product/ProductCard'
 import MyBreadcrumb from '@/components/product/ProductPage/BreadCrumb'
 import Dropdown from '@/components/product/ProductPage/DropDown'
 import { Pagination } from '@/components/product/ProductPage/Pagination'
-import Sidebar from '@/components/product/Sidebar'
+import Sidebar from '@/components/product/Sidebar/Sidebar'
 import { useProductList } from '@/hook/useProductList'
 import { useParams } from 'next/navigation'
 import { useState } from 'react'
@@ -24,7 +24,7 @@ const Category = () => {
 
   return (
     <>
-      <div className='p-16 grid grid-cols-[30%_70%] '>
+      <div className='p-16 grid grid-cols-[26%_70%] gap-10 '>
         <Sidebar />
 
         <div className=' bg-white  h-auto p-20'>

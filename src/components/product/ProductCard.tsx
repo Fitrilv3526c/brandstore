@@ -9,7 +9,7 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip'
 
-interface Product {
+export interface Product {
   id: number
   title: string
   img: string
@@ -17,6 +17,9 @@ interface Product {
   discount: boolean
   discountPercentage: number
   price: number
+  rating: {
+    value: number
+  }
 }
 
 interface Props {
