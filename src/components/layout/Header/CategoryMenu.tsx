@@ -9,15 +9,15 @@ const categories = [
   },
   {
     title: 'WOMEN',
-    href: '/products/women',
+    href: '/products/Women',
   },
   {
     title: 'MEN',
-    href: '/products/men',
+    href: '/products/Men',
   },
   {
     title: 'ACCESSORIES',
-    href: '/products/accessories',
+    href: '/products/Accessories',
   },
 ]
 

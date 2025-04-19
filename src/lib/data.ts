@@ -17,6 +17,7 @@ const data = {
         count: 87,
       },
       stock: 7,
+      createdAt: '2024-04-28T13:15:00Z',
       // variants: [
       //   { color: 'blue', img: '/images/men2.jpg' },
       //   { color: 'yellow', img: '/images/shirt-yellow.jpg' },
@@ -38,6 +39,7 @@ const data = {
         count: 80,
       },
       stock: 4,
+      createdAt: '2024-05-12T09:45:00Z',
     },
     {
       id: 3,
@@ -54,6 +56,7 @@ const data = {
         count: 40,
       },
       stock: 10,
+      createdAt: '2024-06-30T18:20:00Z',
     },
     {
       id: 4,
@@ -70,6 +73,7 @@ const data = {
         count: 70,
       },
       stock: 8,
+      createdAt: '2024-07-18T07:10:00Z',
     },
     {
       id: 5,
@@ -86,6 +90,7 @@ const data = {
         count: 90,
       },
       stock: 0,
+      createdAt: '2024-08-05T21:30:00Z',
     },
     {
       id: 6,
@@ -102,6 +107,7 @@ const data = {
         count: 90,
       },
       stock: 0,
+      createdAt: '2024-09-23T14:05:00Z',
     },
     {
       id: 7,
@@ -118,6 +124,7 @@ const data = {
         count: 70,
       },
       stock: 15,
+      createdAt: '2024-10-11T10:55:00Z',
     },
     {
       id: 8,
@@ -134,6 +141,7 @@ const data = {
         count: 0,
       },
       stock: 6,
+      createdAt: '2024-11-27T16:40:00Z',
     },
     {
       id: 9,
@@ -150,6 +158,7 @@ const data = {
         count: 10,
       },
       stock: 13,
+      createdAt: '2025-01-03T08:25:00Z',
     },
     {
       id: 10,
@@ -166,6 +175,7 @@ const data = {
         count: 70,
       },
       stock: 7,
+      createdAt: '2025-03-15T19:50:00Z',
     },
   ],
 }
