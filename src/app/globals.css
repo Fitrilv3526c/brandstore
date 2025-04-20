@@ -81,6 +81,7 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --xs: 485px;
 }
 
 .dark {
@@ -132,5 +133,13 @@ body {
   }
   .btn2 {
     @apply border-white border bg-transparent text-white hover:bg-white hover:text-black;
+  }
+}
+
+/* globals.css */
+@media (min-width: 485px) {
+  .xs-grid-col-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

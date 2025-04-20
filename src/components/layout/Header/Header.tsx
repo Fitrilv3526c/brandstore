@@ -18,7 +18,6 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 interface props {
   bgColor: string
   textColor: string
-  blur?: string
   headerLogo: string
   cartNumColor: string
   cartNumBGColor: string
@@ -28,7 +27,6 @@ interface props {
 const Header = ({
   bgColor,
   textColor,
-  blur,
   headerLogo,
   cartNumBGColor,
   cartNumColor,
@@ -37,7 +35,7 @@ const Header = ({
   return (
     <>
       <header
-        className={`${headerPosition} w-full h-16 sm:h-20 md:h-24 ${bgColor} ${blur}  flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12`}
+        className={`${headerPosition} w-full h-16 sm:h-20 md:h-24 ${bgColor}  flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12`}
       >
         <div className='flex items-center gap-4 md:gap-6 lg:gap-8'>
           <HeaderLogo logo={headerLogo} />

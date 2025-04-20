@@ -1,11 +1,9 @@
-// import HeaderContainer from '@/components/layout/Header/HeaderContainer'
-import React from 'react'
+import AboutPage from '@/components/pages/AboutPage'
 
 const About = () => {
   return (
     <>
-      {/* <HeaderContainer img='/images/banner4.jpg' /> */}
-      <h2>About</h2>
+      <AboutPage />
     </>
   )
 }
