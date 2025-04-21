@@ -11,9 +11,15 @@ interface props {
   minPrice: number
   maxPrice: number
   searchQuery: string
+  categoryName?: string
 }
 
-const ProductPageContainer = ({ minPrice, maxPrice, searchQuery }: props) => {
+const ProductPageContainer = ({
+  minPrice,
+  maxPrice,
+  searchQuery,
+  categoryName,
+}: props) => {
   const params = useParams()
   const selectedCategory = params.category as string
   const [page, setPage] = useState<number>(1)
@@ -34,6 +40,9 @@ const ProductPageContainer = ({ minPrice, maxPrice, searchQuery }: props) => {
     <>
       <div className=' bg-white  h-auto p-14 sm:p-20'>
         <MyBreadcrumb categoryName='Products' />
+        <h1 className='text-4xl sm:text-5xl md:text-7xl font-semibold mb-16'>
+          {categoryName}
+        </h1>
         {currentProducts.length > 0 && (
           <div className='flex justify-between items-center flex-wrap mb-11 text-[18px]'>
             <span className='mb-4 sm:mb-0'>
