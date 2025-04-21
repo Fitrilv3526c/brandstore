@@ -90,7 +90,7 @@ const AboutPage = () => {
             ad litora torquent per conubia nostra.
           </p>
         </div>
-        <div className='grid grid-cols-1 xs-grid-col-2 sm:grid-col-2 sm:grid-cols-2 md:grid-cols-3 gap-7 mt-24 items-center'>
+        <div className='grid grid-cols-1 xs-grid-col-2 sm:grid-cols-2 md:!grid-cols-3 gap-7 mt-24 items-center'>
           {persons.map((person) => (
             <div
               key={person.id}

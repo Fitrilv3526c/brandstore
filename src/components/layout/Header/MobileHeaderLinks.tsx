@@ -16,8 +16,8 @@ const MobileHeaderLinks = () => {
           { text: 'WOMEN', href: '/products/Women' },
           { text: 'MEN', href: '/products/Men/' },
           { text: 'ACCESSORIES', href: '/products/Accessories' },
-          { text: 'ABOUT', href: '/' },
-          { text: 'CONTACT US', href: '/' },
+          { text: 'ABOUT', href: '/about' },
+          { text: 'CONTACT US', href: '/contact' },
         ].map((item, index) => (
           <li key={index}>
             <Link

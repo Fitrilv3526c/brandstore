@@ -13,10 +13,15 @@ const HeaderLinks = ({ textColor, cartNumBGColor, cartNumColor }: props) => {
   const pathname = usePathname()
   return (
     <ul className={`flex items-center font-medium ${textColor} gap-4 xl:gap-6`}>
-      <Link href='/about' className={`hover:text-blue-300 transition-colors ${pathname === '/about' && 'text-blue-500'}`}>
+      <Link
+        href='/about'
+        className={`hover:text-blue-300 transition-colors ${
+          pathname === '/about' && 'text-blue-500'
+        }`}
+      >
         ABOUT
       </Link>
-      <Link href='/' className='hover:text-blue-300 transition-colors'>
+      <Link href='/contact' className='hover:text-blue-300 transition-colors'>
         CONTACT US
       </Link>
       <CartButton
