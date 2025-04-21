@@ -42,7 +42,9 @@ const Category = () => {
 
         <div className=' bg-white  h-auto p-20 order-1 lg:order-1'>
           <MyBreadcrumb categoryName={selectedCategory} />
-          <h1 className='text-7xl font-semibold mb-16'>{selectedCategory}</h1>
+          <h1 className='text-4xl sm:text-5xl md:text-7xl font-semibold mb-16'>
+            {selectedCategory}
+          </h1>
           {currentProducts.length > 0 && (
             <div className='flex justify-between mb-11 text-[18px]'>
               <span>
@@ -54,7 +56,7 @@ const Category = () => {
           {currentProducts.length > 0 ? (
             <ProductCard
               products={currentProducts}
-              classes='grid grid-cols-3 xl:grid-cols-4 gap-4'
+              classes='grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4'
             />
           ) : (
             <div className='text-center text-gray-500 text-lg mt-10'>
