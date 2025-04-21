@@ -30,15 +30,17 @@ const Category = () => {
 
   return (
     <>
-      <div className='p-16 grid grid-cols-[26%_70%] gap-10 items-start '>
-        <Sidebar
-          setMaxPrice={setMaxPrice}
-          setMinPrice={setMinPrice}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
+      <div className='p-16 grid lg:grid-cols-[26%_70%] gap-10 items-start '>
+        <div className='order-2 lg:order-1'>
+          <Sidebar
+            setMaxPrice={setMaxPrice}
+            setMinPrice={setMinPrice}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
+        </div>
 
-        <div className=' bg-white  h-auto p-20'>
+        <div className=' bg-white  h-auto p-20 order-1 lg:order-1'>
           <MyBreadcrumb categoryName={selectedCategory} />
           <h1 className='text-7xl font-semibold mb-16'>{selectedCategory}</h1>
           {currentProducts.length > 0 && (
