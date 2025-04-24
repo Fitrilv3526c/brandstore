@@ -9,6 +9,8 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip'
 import ProductRating from './ProductRating'
+import { useCartStore } from '@/hook/CartStore'
+import { toast } from 'sonner'
 
 export interface Product {
   id: number
@@ -26,9 +28,10 @@ export interface Product {
 interface Props {
   products: Product[]
   classes: string
+  currentCategory: string
 }
 
-const ProductCard = ({ products, classes }: Props) => {
+const ProductCard = ({ products, classes, currentCategory }: Props) => {
   const getDiscountedPrice = (price: number, percentage: number) => {
     return price - (price * percentage) / 100
   }
@@ -41,8 +44,28 @@ const ProductCard = ({ products, classes }: Props) => {
           ? getDiscountedPrice(product.price, product.discountPercentage)
           : product.price
 
+        const handleAddToCart = () => {
+          const addToCart = useCartStore.getState().addToCart
+          addToCart({
+            id: product.id,
+            title: product.title,
+            img: product.img,
+            price: product.price,
+            quantity: 1,
+          })
+          toast.success('Added to Cart')
+        }
+
         return (
-          <Link href='/' key={product.id} className='w-full min-w-0'>
+          <Link
+            href={
+              currentCategory === 'everything'
+                ? `/product/${product.id}`
+                : `/products/${currentCategory}/${product.id}`
+            }
+            className='w-full min-w-0'
+            key={product.id}
+          >
             <div className='relative group transition-all aspect-square'>
               <Image
                 src={product.img}
@@ -52,7 +75,6 @@ const ProductCard = ({ products, classes }: Props) => {
                 className='object-contain w-full h-full'
                 sizes='(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw'
               />
-
               <div className='absolute top-[23px] w-full flex justify-between px-4'>
                 <div>
                   {product.discount && (
@@ -64,7 +86,10 @@ const ProductCard = ({ products, classes }: Props) => {
 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button className='bg-gray-100 text-black hover:bg-white rounded-full hidden group-hover:block cursor-pointer'>
+                    <Button
+                      onClick={handleAddToCart}
+                      className='bg-gray-100 text-black hover:bg-white rounded-full hidden group-hover:block cursor-pointer'
+                    >
                       <BsHandbagFill className='w-5 h-5' />
                     </Button>
                   </TooltipTrigger>

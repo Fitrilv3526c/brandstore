@@ -12,7 +12,7 @@ const MobileHeaderLinks = () => {
             text: 'Account',
             href: '/',
           },
-          { text: 'EVERYTHING', href: '/products' },
+          { text: 'EVERYTHING', href: '/product' },
           { text: 'WOMEN', href: '/products/Women' },
           { text: 'MEN', href: '/products/Men/' },
           { text: 'ACCESSORIES', href: '/products/Accessories' },

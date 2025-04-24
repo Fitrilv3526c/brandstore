@@ -1,4 +1,6 @@
+import { useCartStore } from '@/hook/CartStore'
 import { ShoppingBag } from 'lucide-react'
+import Link from 'next/link'
 
 interface props {
   textColor: string
@@ -6,6 +8,8 @@ interface props {
   cartNumBGColor: string
 }
 const CartButton = ({ textColor, cartNumColor, cartNumBGColor }: props) => {
+  const cart = useCartStore((state) => state.cart)
+
   return (
     <div className={`flex items-center gap-8 ${textColor} `}>
       <span>$ 0.00</span>
@@ -13,9 +17,11 @@ const CartButton = ({ textColor, cartNumColor, cartNumBGColor }: props) => {
         <span
           className={`absolute bottom-4 left-3 rounded-full w-6 h-6 text-sm flex items-center justify-center ${cartNumColor} ${cartNumBGColor}`}
         >
-          0
+          {cart.length}
         </span>
-        <ShoppingBag />
+        <Link className='' href='/cart'>
+          <ShoppingBag />
+        </Link>
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import ProductPageContainer from '@/components/product/ProductPage/ProductPageCo
 import Sidebar from '@/components/product/Sidebar/Sidebar'
 import useStateFunc from '@/hook/useStateFunc'
 
-const Products = () => {
+const Product = () => {
   const {
     searchQuery,
     setSearchQuery,
@@ -33,4 +33,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Product

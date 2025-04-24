@@ -5,7 +5,7 @@ import Dropdown from './DropDown'
 import { Pagination } from './Pagination'
 import { useState } from 'react'
 import { useProductList } from '@/hook/useProductList'
-import { useParams } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 
 interface props {
   minPrice: number
@@ -36,10 +36,38 @@ const ProductPageContainer = ({
       searchQuery,
     })
 
+  const pathname = usePathname()
+  const pathParts = pathname.split('/').filter(Boolean)
+
+  let breadcrumbCategory = ''
+  let breadcrumbProduct = ''
+
+  if (pathname === '/product') {
+    breadcrumbCategory = 'Products'
+  } else if (pathParts.length === 2 && pathParts[0] === 'products') {
+    breadcrumbCategory = pathParts[1]
+  } else if (pathParts.length === 2 && pathParts[0] === 'product') {
+    breadcrumbCategory = 'Products'
+    const matchedProduct = currentProducts.find(
+      (p) => p.id.toString() === pathParts[1]
+    )
+    breadcrumbProduct = matchedProduct?.title ?? `Product #${pathParts[1]}`
+  } else if (pathParts.length === 3 && pathParts[0] === 'products') {
+    breadcrumbCategory = pathParts[1]
+    const matchedProduct = currentProducts.find(
+      (p) => p.id.toString() === pathParts[2]
+    )
+    breadcrumbProduct = matchedProduct?.title ?? `Product #${pathParts[2]}`
+  }
+  
+
   return (
     <>
       <div className=' bg-white  h-auto p-14 sm:p-20'>
-        <MyBreadcrumb categoryName='Products' />
+        <MyBreadcrumb
+          categoryName={breadcrumbCategory}
+          productName={breadcrumbProduct}
+        />
         <h1 className='text-4xl sm:text-5xl md:text-7xl font-semibold mb-16'>
           {categoryName}
         </h1>
@@ -54,6 +82,7 @@ const ProductPageContainer = ({
         )}
         {currentProducts.length > 0 ? (
           <ProductCard
+            currentCategory={categoryName || 'everything'}
             products={currentProducts}
             classes='grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4'
           />

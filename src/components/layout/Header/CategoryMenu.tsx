@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 const categories = [
   {
     title: 'EVERYTHING',
-    href: '/products',
+    href: '/product',
   },
   {
     title: 'WOMEN',
