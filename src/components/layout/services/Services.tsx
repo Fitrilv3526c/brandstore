@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 import { ImEarth } from 'react-icons/im'
 import { FaAward } from 'react-icons/fa'
 import { IoPricetagsOutline } from 'react-icons/io5'

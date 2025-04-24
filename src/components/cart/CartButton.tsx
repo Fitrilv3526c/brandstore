@@ -1,3 +1,4 @@
+'use client'
 import { useCartStore } from '@/hook/CartStore'
 import { ShoppingBag } from 'lucide-react'
 import Link from 'next/link'

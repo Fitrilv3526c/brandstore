@@ -1,3 +1,4 @@
+'use client'
 import CartButton from '@/components/cart/CartButton'
 import { UserRound } from 'lucide-react'
 import Link from 'next/link'

@@ -1,3 +1,4 @@
+'use client'
 import data from '@/lib/data'
 import Link from 'next/link'
 

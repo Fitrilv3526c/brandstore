@@ -1,4 +1,4 @@
-// components/Rating.tsx
+
 'use client'
 
 import { Star } from 'lucide-react'
@@ -6,10 +6,10 @@ import { useState } from 'react'
 import clsx from 'clsx'
 
 type RatingProps = {
-  value: number // Current rating, e.g. 3.5
-  onChange?: (value: number) => void // Optional: make interactive
-  max?: number // Default is 5
-  readOnly?: boolean // True for static display
+  value: number 
+  onChange?: (value: number) => void 
+  max?: number
+  readOnly?: boolean 
 }
 
 const ProductRating = ({
