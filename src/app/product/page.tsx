@@ -13,7 +13,7 @@ const Product = () => {
     setMaxPrice,
   } = useStateFunc()
   return (
-    <div className='p-7 md:p-16 grid  lg:grid-cols-[26%_70%] gap-10 items-start'>
+    <div className=' py-7 md:p-16 grid  lg:grid-cols-[26%_70%] gap-10 items-start'>
       <div className='order-2 lg:order-1'>
         <Sidebar
           setMaxPrice={setMaxPrice}

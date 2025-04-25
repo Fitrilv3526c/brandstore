@@ -35,7 +35,7 @@ export default function HomeLayout({
 
       {pathname === '/about' && (
         <div className='absolute z-30 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[calc(50%+80px)]'>
-          <h1 className='text-5xl font-bold text-white'>About Us</h1>
+          <h1 className='text-5xl font-bold text-white'>About</h1>
         </div>
       )}
 

@@ -59,11 +59,10 @@ const ProductPageContainer = ({
     )
     breadcrumbProduct = matchedProduct?.title ?? `Product #${pathParts[2]}`
   }
-  
 
   return (
     <>
-      <div className=' bg-white  h-auto p-14 sm:p-20'>
+      <div className=' bg-white  h-auto px-2 py-14 sm:p-20'>
         <MyBreadcrumb
           categoryName={breadcrumbCategory}
           productName={breadcrumbProduct}
