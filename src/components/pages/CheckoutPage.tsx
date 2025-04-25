@@ -2,8 +2,10 @@
 import { useState } from 'react'
 import { useCartStore } from '@/hook/CartStore'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 
 const CheckoutPage = () => {
+  const router = useRouter()
   const cart = useCartStore((state) => state.cart)
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -128,6 +130,9 @@ const CheckoutPage = () => {
 
     if (isValid) {
       toast.success('Order placed successfully!')
+      setTimeout(() => {
+        router.push('/product')
+      }, 1500)
     } else {
       toast.error(
         'Please fill in all required fields and select a payment method.'
