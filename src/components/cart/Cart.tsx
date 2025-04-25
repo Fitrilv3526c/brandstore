@@ -73,9 +73,11 @@ const CartPage = () => {
           >
             Clear Cart
           </button>
-          <button className='mt-4 bg-blue-600 ml-5 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-700'>
-            Checkout
-          </button>
+          <Link href='/checkout'>
+            <button className='mt-4 bg-blue-600 ml-5 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-700'>
+              Checkout
+            </button>
+          </Link>
         </div>
       )}
     </div>
