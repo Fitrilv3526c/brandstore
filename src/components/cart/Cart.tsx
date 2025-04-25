@@ -13,12 +13,12 @@ const CartPage = () => {
   )
 
   return (
-    <div className='p-8'>
+    <div className='p-5 sm:p-8'>
       <h1 className='text-3xl font-semibold mb-6 text-center'>Your Cart</h1>
       {cart.length === 0 ? (
         <p className='text-center'>
           Your cart is empty.{' '}
-          <Link href='/' className='text-blue-600'>
+          <Link href='/product' className='text-blue-600'>
             Continue Shopping
           </Link>
         </p>
@@ -35,17 +35,17 @@ const CartPage = () => {
                   alt={item.title}
                   width={300}
                   height={300}
-                  className='w-16 h-16 object-cover'
+                  className='w-12 h-12 sm:w-16 sm:h-16 object-cover'
                 />
                 <div>
-                  <p>{item.title}</p>
-                  <p>
+                  <p className='text-sm sm:text-base'>{item.title}</p>
+                  <p className='text-xs sm:text-sm'>
                     ${item.price} x {item.quantity} = $
                     {item.price * item.quantity}
                   </p>
                 </div>
               </div>
-              <div className='flex items-center gap-2'>
+              <div className='flex items-center gap-2 sm:gap-4'>
                 <input
                   type='number'
                   min={1}
@@ -53,7 +53,7 @@ const CartPage = () => {
                   onChange={(e) =>
                     updateQuantity(item.id, Number(e.target.value))
                   }
-                  className='w-16 border p-1 rounded'
+                  className='w-12 sm:w-16 border p-1 rounded'
                 />
                 <button
                   onClick={() => removeFromCart(item.id)}
@@ -73,9 +73,7 @@ const CartPage = () => {
           >
             Clear Cart
           </button>
-          <button
-            className='mt-4 bg-blue-600 ml-5 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-700'
-          >
+          <button className='mt-4 bg-blue-600 ml-5 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-700'>
             Checkout
           </button>
         </div>
